@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{%static 'css/forms1.css' %}">
+</head>
+<body>
+<h1>Student Input Form </h1>
+<div class="container" align="center">
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+
+    </form>
+</div>
+</body>
+</html>
