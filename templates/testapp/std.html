@@ -1,14 +1,20 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{%static 'css/forms1.css' %}">
 </head>
 <body>
-<h1>Student Input Form </h1>
 <div class="container" align="center">
+    {% if submitted %}
+    <h1>Student with name : {{name}} processed successfully</h1>
+    <h2>Enter next student information</h2>
+    {% else %}
+    <h1>Student Input Form </h1>
+    {% endif %}
     <form method="post">
         {{form.as_p}}
         {% csrf_token %}
